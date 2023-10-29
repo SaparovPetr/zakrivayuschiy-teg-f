@@ -83,16 +83,14 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease; 
 }
 
 .theme-menu__button:hover {
-  opacity: 0.6; 
+  opacity: 0.6;
 }
 
-.theme-menu__button:disabled {
-  opacity: 0.6; 
-}
+
 
 .theme-menu__button:disabled::before {
   content: '▶';
@@ -107,7 +105,7 @@
 }
 
 
- @keyframes arrow {
+@keyframes arrow {
   0% {
     inset: 0 -5px;
   }
@@ -128,6 +126,7 @@
   opacity: 0.6; 
   margin-left: -28px;
   pointer-events: none;
+  transition: color 0.3s ease; 
 }
 
 
@@ -252,6 +251,17 @@
   }
 }
 
+@keyframes remove {
+  from {
+    translate: 0% 0%;
+  }
+
+  to {
+    translate: -100% 0%;
+  }
+}
+
+
 
 .button {
   font-family: var(--accent-font);
@@ -273,6 +283,8 @@
 
   cursor: pointer;
   overflow: hidden;
+
+  transition: 0.3s;
 }
 
 /* _________________________АНИМАЦИЯ ОБЕИХ_____________________________________ */
@@ -283,6 +295,7 @@
   inset: 0;
   background-color: var(--themes-main-color, #000);
   translate: -100% 0%;
+  animation: remove 0.5s ease-in-out forwards;
 }
 
 
@@ -307,7 +320,7 @@
 
 .button:hover {
   color: var(--button-text-color, #FFF);
-  transition: 0.3s;
+  
 }
 
 
@@ -322,6 +335,7 @@
   inline-size: 34px;
   block-size: 34px;
   padding: 0;
+  cursor: pointer;
   
 }
 
@@ -333,26 +347,98 @@
 .card__icon-button:focus-visible {
   outline: none;
   outline: solid 2px var(--themes-main-color);
+  transition: 0.3s ease;
 }
 
 /* __________________________ИКОНКА СЕРДЦА_____________________________________ */
 
-
 .like-icon {
-  inline-size: 21px;
-  block-size: 21px;
+  inline-size: 30px;
+  block-size: 30px;
+  transition: fill 5.5s;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0;
+	transition-timing-function: ease;
+}
+
+.main-body {
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.05s;
+	transition-timing-function: ease;
+}
+
+
+
+.like-icon:hover .core {
+  fill: var(--heart-core-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.03s;
+	transition-timing-function: ease;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-body-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0;
+	transition-timing-function: ease;
+}
+
+
+.like-icon:active .core {
+  fill: var(--heart-sparks-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.03s;
+	transition-timing-function: ease;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-sparks-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0;
+	transition-timing-function: ease;
 }
 
 
 
 
 
+.like-icon.is-liked .contour {
+  fill: var(--heart-sparks-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.06s;
+	transition-timing-function: ease;
+}
 
 
+.like-icon.is-liked .main-body {
+  fill: var(--heart-sparks-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.03s;
+	transition-timing-function: ease;
+}
 
-
-
-
+.like-icon.is-liked .core {
+  fill: var(--heart-sparks-color);
+  transition-property: fill;
+	transition-duration: 0.3s;
+	transition-delay: 0.03s;
+	transition-timing-function: ease;
+}
 
 
 
@@ -413,12 +499,13 @@
   inline-size: 28px;
   block-size: 28px;
   mix-blend-mode: var(--floppy-setings-one);
+  transition: 0.3s;
 
 }
 
 .button:hover .floppy {
   mix-blend-mode: var(--floppy-setings-two);
-  transition: 0.3s;
+  
 }
 
 
