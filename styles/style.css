@@ -17,4 +17,427 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: var(--weight-regular);
+  background: var(--themes-background);
+  color: var(--themes-main-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--background-page);
 }
+.central-position {
+  display: grid;
+  grid-template-columns: minmax(375px, 696px);
+  justify-content: center;
+}
+
+
+.header {
+  padding: 102px 0;
+ 
+}
+
+.header__wrapper {
+  
+  display: grid;
+  grid-template-rows: 1fr fit-content(108px) 1fr;
+  background: var(--themes-background);
+  border: solid 2px var(--themes-main-color);
+  font-family: var(--accent-font);
+  justify-items: center;
+}
+
+@media (width >= 376px) {
+  .header__wrapper {
+    padding-inline-start: 16px;
+  }
+
+}
+
+
+.header__logo-wrapper{
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+}
+
+.header__logo {
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+}
+
+/* .header__theme-menu   */
+
+.theme-menu__list {
+  display: grid;
+  gap: 14px;
+  padding: 25px 0;
+  font-size: 14px;
+}
+
+
+.theme-menu__button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6; 
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6; 
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  color: var(--themes-main-color);
+  position: relative;
+  inset: 0 -5px;
+
+  animation-name: arrow;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+
+ @keyframes arrow {
+  0% {
+    inset: 0 -5px;
+  }
+  
+  50% {
+    inset: 0 1px;
+  }
+
+  100% {
+    inset: 0 -5px;
+  }
+}
+
+ 
+
+
+.theme-menu__button:disabled {
+  opacity: 0.6; 
+  margin-left: -28px;
+  pointer-events: none;
+}
+
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  margin-block-start: 1px;
+  background-color: var(--themes-main-color);
+  opacity: 0.6; 
+  transition: 0.3s;
+}
+
+.theme-menu__button:focus { 
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6; 
+}
+
+
+.theme-menu__button:focus::after {
+  width: 100%;
+}
+
+.theme-menu__button:active::after {
+  width: 0;
+}
+
+
+
+
+
+
+
+
+/* ______________________________МЕЙН */
+
+
+.card {
+  background: var(--themes-background);
+  border: solid 2px var(--themes-main-color);
+  display: grid;
+  margin-block-end: 50px;
+}
+
+.card__title {
+  font-family: var(--main-font);
+  font-variation-settings: var(--weight-title);
+  padding: 5px 10px;
+}
+
+.card__picture-wrapper {
+  position: relative;
+  border-block-start: solid 2px var(--themes-main-color);
+  
+}
+
+.card__lable {
+  position: absolute;
+  top: 25px;
+  right: 21px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light; 
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  text-shadow:
+  -1px 0 var(--themes-background), 
+   0 1px var(--themes-background), 
+   1px 0 var(--themes-background), 
+   0 -1px var(--themes-background);   
+
+}
+
+@supports((text-stroke: 1px var(--themes-background)) or (-webkit-text-stroke: 1px #000000)) {
+  .card__lable {
+      -webkit-text-stroke: 1px var(--themes-background);
+      text-stroke: 1px var(--themes-background);
+      text-shadow: none;
+  }
+}
+
+.card__picture {
+  inline-size: 100%;
+  block-size: 100%;
+  
+}
+
+.card__description {
+  font-family: var(--main-font);
+  font-weight: var(--weight-regular);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  line-height: 116.667%; /* 21px */ 
+
+}
+
+.card__button-zone {
+  
+  display: flex;
+  gap: 12px;
+  justify-self: end;
+  align-items: center;
+  padding: 0 25px 25px 0;
+}
+
+
+/* _________________________ОБЕ_____________________________________ */
+
+@keyframes move {
+  from {
+    translate: -100% 0%;
+  }
+
+  to {
+    translate: 0% 0%;
+  }
+}
+
+
+.button {
+  font-family: var(--accent-font);
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  
+  border: 2px solid var(--themes-main-color, #000);
+  background: var(--themes-background, #FFF); 
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 90%; /* 12.6px */ 
+
+
+  
+  position: relative;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* _________________________АНИМАЦИЯ ОБЕИХ_____________________________________ */
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--themes-main-color, #000);
+  translate: -100% 0%;
+}
+
+
+.button:hover::before {
+  animation: move 0.5s ease-in-out forwards;
+}
+    
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px var(--themes-main-color, #000);
+}
+
+
+.button__text {
+  position: relative;
+  z-index: 1;
+}
+
+.button:hover {
+  color: var(--button-text-color, #FFF);
+  transition: 0.3s;
+}
+
+
+
+
+
+/* __________________________ККНОПКА СЕРДЦЕ_____________________________________ */
+
+.card__icon-button {
+  border: none; 
+  background: transparent;
+  inline-size: 34px;
+  block-size: 34px;
+  padding: 0;
+  
+}
+
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  outline: solid 2px var(--themes-main-color);
+}
+
+/* __________________________ИКОНКА СЕРДЦА_____________________________________ */
+
+
+.like-icon {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* __________________________Кнопка Лайк_____________________________________ */
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  padding: 9px 17px;
+}
+
+
+
+
+
+
+/* __________________________ФУТ_____________________________________ */
+
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-block-end: 102px;
+}
+
+.button_footer-button {
+  gap: 8px;
+  flex-direction: column;
+  inline-size: 306px;
+  block-size: 80px;
+}
+
+
+.floppy {
+  inline-size: 28px;
+  block-size: 28px;
+  mix-blend-mode: var(--floppy-setings-one);
+
+}
+
+.button:hover .floppy {
+  mix-blend-mode: var(--floppy-setings-two);
+  transition: 0.3s;
+}
+
+
+
+
+@media (width >= 376px) {
+  
+  .button_footer-button {
+    flex-direction: row;
+    inline-size: 335px;
+    block-size: 51px;
+  }
+
+  .floppy {
+    inline-size: 21px;
+    block-size: 21px;
+  }
+} 
+
+
+
+
