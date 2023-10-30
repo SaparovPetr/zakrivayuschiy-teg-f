@@ -1,25 +1,15 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
 :root.theme-dark {
     --weight-regular: 'wght' 465;
     --weight-title: 'wght' 785;
-
     --themes-background: #000; 
     --themes-main-color: #00CC14;
     --button-text-color: #000; 
-
     --background-page: 
     repeating-linear-gradient(90deg, #000, #000 1px, transparent 1px, transparent 2px),
     repeating-linear-gradient(0deg, #000, #000 1px, transparent 1px, transparent 2px),
     linear-gradient(#007f0c, #004306); 
-
     --floppy-setings-one: lighten;
     --floppy-setings-two: darken;
-
     --heart-contour-color:#00CC14;
     --heart-checked-color: #FF0000;
 }
@@ -27,19 +17,15 @@
 :root.theme-light {
     --weight-regular: 'wght' 400;
     --weight-title: 'wght' 700;
-    
     --themes-background: #FFF;
     --themes-main-color: #000;
     --button-text-color: #FFF;
-    
     --background-page: 
     repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px),
     repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px),
     linear-gradient(#e7e7e7, #1a1a1a); 
-
     --floppy-setings-one: darken;
     --floppy-setings-two: lighten;
-
     --heart-contour-color: #000;
     --heart-checked-color: #FF0000;
 }
@@ -48,19 +34,15 @@
     :root {
         --weight-regular: 'wght' 465;
         --weight-title: 'wght' 785;
-    
         --themes-background: #000; 
         --themes-main-color: #00CC14;
         --button-text-color: #000; 
-    
         --background-page: 
         repeating-linear-gradient(90deg, #000, #000 1px, transparent 1px, transparent 2px),
         repeating-linear-gradient(0deg, #000, #000 1px, transparent 1px, transparent 2px),
         linear-gradient(#007f0c, #004306); 
-    
         --floppy-setings-one: lighten;
         --floppy-setings-two: darken;
-    
         --heart-contour-color:#00CC14;
         --heart-checked-color: #FF0000;
     }

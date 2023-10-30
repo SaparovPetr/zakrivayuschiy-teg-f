@@ -1,23 +1,17 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --main-font: 'Inter-Variable';
     --accent-font: 'PressStart2P-Regular';
-    
     --weight-regular: 'wght' 400;
     --weight-title: 'wght' 700;
-
     --themes-background: #FFF;
     --themes-main-color: #000;
     --button-text-color: #FFF;
-
     --background-page: 
     repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px),
     repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px),
     linear-gradient(#e7e7e7, #1a1a1a); 
-    
     --floppy-setings-one: darken;
     --floppy-setings-two: lighten;
-
     --heart-contour-color: #000;
     --heart-checked-color: #FF0000;
 }
