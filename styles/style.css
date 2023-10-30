@@ -105,19 +105,6 @@
 }
 
 
-@keyframes arrow {
-  0% {
-    inset: 0 -5px;
-  }
-  
-  50% {
-    inset: 0 1px;
-  }
-
-  100% {
-    inset: 0 -5px;
-  }
-}
 
  
 
@@ -241,25 +228,6 @@
 
 /* _________________________ОБЕ_____________________________________ */
 
-@keyframes move {
-  from {
-    translate: -100% 0%;
-  }
-
-  to {
-    translate: 0% 0%;
-  }
-}
-
-@keyframes remove {
-  from {
-    translate: 0% 0%;
-  }
-
-  to {
-    translate: -100% 0%;
-  }
-}
 
 
 
@@ -350,106 +318,6 @@
   transition: 0.3s ease;
 }
 
-/* __________________________ИКОНКА СЕРДЦА_____________________________________ */
-
-.like-icon {
-  inline-size: 30px;
-  block-size: 30px;
-  transition: fill 5.5s;
-}
-
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0;
-	transition-timing-function: ease;
-}
-
-.main-body {
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.05s;
-	transition-timing-function: ease;
-}
-
-
-
-.like-icon:hover .core {
-  fill: var(--heart-core-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.03s;
-	transition-timing-function: ease;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--heart-body-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0;
-	transition-timing-function: ease;
-}
-
-
-.like-icon:active .core {
-  fill: var(--heart-sparks-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.03s;
-	transition-timing-function: ease;
-}
-
-.like-icon:active .main-body {
-  fill: var(--heart-sparks-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0;
-	transition-timing-function: ease;
-}
-
-
-
-
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-sparks-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.06s;
-	transition-timing-function: ease;
-}
-
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-sparks-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.03s;
-	transition-timing-function: ease;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-sparks-color);
-  transition-property: fill;
-	transition-duration: 0.3s;
-	transition-delay: 0.03s;
-	transition-timing-function: ease;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -526,5 +394,66 @@
 } 
 
 
+/* __________________________Диалог_____________________________________ */
+
+/* .footer__dialog:opened {
+  padding: 0;
+} */
+
+.footer__dialog {
+  max-inline-size: 341px;
+}
+
+.footer__dialog-container {
+  border: solid 2px var(--themes-main-color);
+  background: var(--themes-background);
+  padding: 32px 42px;
+
+
+  color: var(--themes-main-color, #000);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.footer__dialog-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.floppy_floppy-dialog {
+  inline-size: 81px;
+  block-size: 39px;
+}
+
+.button_dialog {
+  block-size: 38px;
+  text-transform: uppercase;
+}
+
+@media (width >= 376px) {
+  .footer__dialog {
+    max-inline-size: 357px;
+  }
+  
+  
+  .footer__dialog-container {
+    padding: 31.5px 32.5px;
+ }
+  
+}
+
+.footer__dialog::backdrop {
+  opacity: 0.75;
+  background: var(--themes-main-color, #000);
+  /* background-color: rgb(0 0 0 / 0.3) */
+}
 
 
