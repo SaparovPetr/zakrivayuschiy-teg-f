@@ -9,6 +9,7 @@
   background-attachment: fixed;
   background-image: var(--background-page);
 }
+
 .central-position {
   display: grid;
   grid-template-columns: minmax(375px, 696px);
@@ -21,16 +22,19 @@
 
 .header__wrapper {
   display: grid;
-  grid-template-rows: 1fr fit-content(108px) 1fr;
+  grid-template-rows: 1fr fit-content(83px) 1fr;
   background: var(--themes-background);
   border: solid 2px var(--themes-main-color);
   font-family: var(--accent-font);
   justify-items: center;
+  max-block-size: 323px;
 }
 
 @media (width >= 376px) {
   .header__wrapper {
+    grid-template-rows: 1fr fit-content(108px) 1fr;
     padding-inline-start: 16px;
+    max-block-size: 364px;
   }
 }
 
@@ -60,6 +64,7 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  text-transform: uppercase;
 }
 
 .theme-menu__button:hover {
