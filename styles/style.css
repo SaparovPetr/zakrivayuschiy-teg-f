@@ -2,7 +2,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font);
-  font-variation-settings: var(--weight-regular);
+  font-variation-settings: var(--weight-regular, 'wght' 400);
   background: var(--themes-background);
   color: var(--themes-main-color);
   background-size: cover;
@@ -118,7 +118,7 @@
   width: 0;
 }
 
-/* ______________________________МЕЙН */
+/* ______________________________МЕЙН______________________________ */
 
 .card {
   background: var(--themes-background);
@@ -128,7 +128,7 @@
 }
 
 .card__title {
-  font-variation-settings: var(--weight-title);
+  font-variation-settings: var(--weight-title, 'wght' 700);
   padding: 5px 10px;
 }
 
@@ -172,7 +172,6 @@
 }
 
 .card__description {
-  font-variation-settings: var(--weight-regular);
   padding: 25px;
   display: flex;
   flex-direction: column;
