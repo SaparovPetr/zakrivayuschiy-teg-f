@@ -1,18 +1,18 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font, 'Inter-Variable'), Courier, monospace;
   font-variation-settings: var(--weight-regular, 'wght' 400);
-  background: var(--themes-background);
-  color: var(--themes-main-color);
+  background: var(--themes-background, #FFF);
+  color: var(--themes-main-color, #000);
   background-size: cover;
   background-attachment: fixed;
-  background-image: var(--background-page);
+  background-image: var(--background-page, repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), linear-gradient(#e7e7e7, #1a1a1a));
 }
 
 .central-position {
   display: grid;
-  grid-template-columns: minmax(375px, 696px);
+  grid-template-columns: minmax(375px, 703px);
   justify-content: center;
 }
 
@@ -21,21 +21,15 @@
 }
 
 .header__wrapper {
-  display: grid;
-  grid-template-rows: 120px 1fr  120px;
-  background: var(--themes-background);
-  border: solid 2px var(--themes-main-color);
-  font-family: var(--accent-font);
+  padding-block-start: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--themes-background, #FFF);
+  border: solid 2px var(--themes-main-color, #000);
+  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
   justify-items: center;
   max-block-size: 323px;
-}
-
-@media (width >= 376px) {
-  .header__wrapper {
-    grid-template-rows: 1fr fit-content(108px) 1fr;
-    padding-inline-start: 16px;
-    max-block-size: 364px;
-  }
 }
 
 .header__logo-wrapper {
@@ -75,7 +69,7 @@
 
 .theme-menu__button:disabled::before {
   content: "▶";
-  color: var(--themes-main-color);
+  color: var(--themes-main-color, #000);
   position: relative;
   inset: 0;
   animation-name: arrow;
@@ -94,10 +88,10 @@
 .theme-menu__button::after {
   content: '';
   display: block;
-  inline-size: 0%;
+  inline-size: 0;
   block-size: 3px;
   margin-block-start: 1px;
-  background-color: var(--themes-main-color);
+  background-color: var(--themes-main-color, #000);
   opacity: 0.6;
   transition: 0.3s;
 }
@@ -118,23 +112,23 @@
   width: 0;
 }
 
-/* ______________________________МЕЙН______________________________ */
-
 .card {
-  background: var(--themes-background);
-  border: solid 2px var(--themes-main-color);
+  background: var(--themes-background, #FFF);
+  border: solid 2px var(--themes-main-color, #000);
   display: grid;
   margin-block-end: 50px;
 }
 
 .card__title {
   font-variation-settings: var(--weight-title, 'wght' 700);
-  padding: 5px 10px;
+  padding: 3px 10px;
+  letter-spacing: -0.5px;
 }
 
 .card__picture-wrapper {
   position: relative;
-  border-block-start: solid 2px var(--themes-main-color);
+  border-block-start: solid 2px var(--themes-main-color, #000);
+  border-block-end: solid 2px var(--themes-main-color, #000);
 }
 
 .card__lable {
@@ -143,24 +137,22 @@
   right: 21px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
   text-shadow:
-    -1px 0 var(--themes-background),
-    0 1px var(--themes-background),
-    1px 0 var(--themes-background),
-    0 -1px var(--themes-background);
+    -1px 0 var(--themes-background, #FFF),
+    0 1px var(--themes-background, #FFF),
+    1px 0 var(--themes-background, #FFF),
+    0 -1px var(--themes-background, #FFF);
 }
 
 @supports (
-  (text-stroke: 1px var(--themes-background)) or
-    (-webkit-text-stroke: 1px #000000)
-) {
+  (text-stroke: 1px var(--themes-background, #FFF)) or (-webkit-text-stroke: 1px #000000)) {
   .card__lable {
-    -webkit-text-stroke: 1px var(--themes-background);
-    text-stroke: 1px var(--themes-background);
+    -webkit-text-stroke: 1px var(--themes-background, #FFF);
+    text-stroke: 1px var(--themes-background, #FFF);
     text-shadow: none;
   }
 }
@@ -168,53 +160,47 @@
 .card__picture {
   inline-size: 100%;
   block-size: 100%;
-  background-image: radial-gradient(at 30px 30px, var(--themes-main-color), #3f2361);
+  background-image: radial-gradient(at 30px 30px, var(--themes-main-color, #000), #3f2361);
 }
 
 .card__description {
-  padding: 25px;
+  padding: 23px 27px;
   display: flex;
   flex-direction: column;
   gap: 27px;
-  line-height: 116.667%; /* 21px */
+  line-height: 130%; /* 21px */
+  letter-spacing: 1px;
 }
 
 .card__button-zone {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   justify-self: end;
   align-items: center;
   padding: 0 25px 25px 0;
 }
 
-/* _________________________ОБЕ_____________________________________ */
-
 .button {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 90%; /* 12.6px */
-
+  line-height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid var(--themes-main-color, #000);
   background: var(--themes-background, #fff);
-
   position: relative;
   cursor: pointer;
   overflow: hidden;
   transition: 0.3s;
 }
 
-/* _________________________АНИМАЦИЯ ОБЕИХ_____________________________________ */
-
 .button::before {
   content: '';
   position: absolute;
   inset: 0;
   background-color: var(--themes-main-color, #000);
-  translate: -100% 0%;
   animation: remove 0.5s ease-in-out forwards;
 }
 
@@ -239,13 +225,11 @@
   color: var(--button-text-color, #fff);
 }
 
-/* __________________________ККНОПКА СЕРДЦЕ_____________________________________ */
-
 .card__icon-button {
   border: none;
   background: transparent;
-  inline-size: 34px;
-  block-size: 34px;
+  inline-size: 40px;
+  block-size: 35px;
   padding: 0;
   cursor: pointer;
 }
@@ -255,19 +239,15 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: solid 2px var(--themes-main-color);
+  outline: solid 2px var(--themes-main-color, #000);
   transition: 0.3s ease;
 }
-
-/* __________________________Кнопка Лайк_____________________________________ */
 
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
   padding: 9px 17px;
 }
-
-/* __________________________ФУТ_____________________________________ */
 
 .footer {
   display: flex;
@@ -286,45 +266,28 @@
 .floppy {
   inline-size: 28px;
   block-size: 28px;
-  mix-blend-mode: var(--floppy-setings-one);
+  mix-blend-mode: var(--floppy-setings-one, darken);
   transition: 0.3s;
 }
 
 .button:hover .floppy {
-  mix-blend-mode: var(--floppy-setings-two);
+  mix-blend-mode: var(--floppy-setings-two, lighten);
 }
-
-@media (width >= 376px) {
-  .button_footer-button {
-    flex-direction: row;
-    inline-size: 335px;
-    block-size: 51px;
-  }
-
-  .floppy {
-    inline-size: 21px;
-    block-size: 21px;
-  }
-}
-
-/* __________________________Диалог_____________________________________ */
 
 .footer__dialog {
   max-inline-size: 341px;
 }
 
 .footer__dialog-container {
-  border: solid 2px var(--themes-main-color);
-  background: var(--themes-background);
+  border: solid 2px var(--themes-main-color, #000);
+  background: var(--themes-background, #FFF);
   padding: 32px 42px;
-
   color: var(--themes-main-color, #000);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
-
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -344,16 +307,6 @@
 .button_dialog {
   block-size: 38px;
   text-transform: uppercase;
-}
-
-@media (width >= 376px) {
-  .footer__dialog {
-    max-inline-size: 357px;
-  }
-
-  .footer__dialog-container {
-    padding: 31.5px 32.5px;
-  }
 }
 
 .footer__dialog::backdrop {
@@ -391,4 +344,55 @@
 
 .card__picture_1-8 {
   filter: sepia(0.5) contrast(2);
+}
+
+@media (width >= 376px) {
+  .header__wrapper {
+    padding-block-start: 136px;
+    max-block-size: 364px;
+  }
+
+  .header__logo-wrapper {
+    gap: 16px;
+  }
+
+  .header__title {
+    line-height: 100%;
+  }
+  
+  .theme-menu__list {
+    gap: 7px;
+    padding: 17px 0;
+    margin-inline-start: 20px;
+    margin-block-start: 12px;
+  }
+
+  .card__description {
+    padding: 28px 26px;
+  }
+
+  .footer__dialog {
+    max-inline-size: 357px;
+    z-index: 5;
+  }
+
+  .footer__dialog-container {
+    padding: 31.5px 32.5px;
+  }
+
+  .button_footer-button {
+    flex-direction: row;
+    inline-size: 335px;
+    block-size: 51px;
+  }
+
+  .floppy {
+    inline-size: 21px;
+    block-size: 21px;
+  }
+
+  .floppy_floppy-dialog {
+    inline-size: 81px;
+    block-size: 39px;
+  }
 }
