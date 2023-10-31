@@ -22,7 +22,7 @@
 
 .header__wrapper {
   display: grid;
-  grid-template-rows: 1fr fit-content(83px) 1fr;
+  grid-template-rows: 120px 1fr  120px;
   background: var(--themes-background);
   border: solid 2px var(--themes-main-color);
   font-family: var(--accent-font);
@@ -50,13 +50,15 @@
 
 .header__title {
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  line-height: 80%;
 }
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
+  gap: 7px;
   padding: 25px 0;
   font-size: 14px;
+  margin-inline-start: 22px;
 }
 
 .theme-menu__button {
@@ -75,8 +77,7 @@
   content: "▶";
   color: var(--themes-main-color);
   position: relative;
-  inset: 0 -5px;
-
+  inset: 0;
   animation-name: arrow;
   animation-iteration-count: infinite;
   animation-duration: 1s;
@@ -91,7 +92,7 @@
 }
 
 .theme-menu__button::after {
-  content: "";
+  content: '';
   display: block;
   inline-size: 0%;
   block-size: 3px;
@@ -168,8 +169,7 @@
 .card__picture {
   inline-size: 100%;
   block-size: 100%;
-  background-color: var(--themes-main-color);
-  opacity: 0.9;
+  background-image: radial-gradient(at 30px 30px, var(--themes-main-color), #3f2361);
 }
 
 .card__description {
@@ -211,7 +211,7 @@
 /* _________________________АНИМАЦИЯ ОБЕИХ_____________________________________ */
 
 .button::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background-color: var(--themes-main-color, #000);

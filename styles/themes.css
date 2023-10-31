@@ -25,7 +25,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+:root {
         --weight-regular: 'wght' 465;
         --weight-title: 'wght' 785;
         --themes-background: #000; 
