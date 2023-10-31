@@ -1,7 +1,10 @@
 # zakrivayuschiy-teg-f
-Проект "Закрывающий тег"
+Репозиторий: проект "Закрывающий тег":
 
-SaparovPetr/zakrivayuschiy-teg-f
+https://github.com/SaparovPetr/zakrivayuschiy-teg-f.git
+
+
+
 
 Ссылка на GitHub Pages:
 
