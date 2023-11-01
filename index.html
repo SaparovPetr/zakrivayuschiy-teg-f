@@ -20,8 +20,8 @@
     <header class="header central-position">
       <div class="header__wrapper">
         <div class="header__logo-wrapper">
-          <h1 class="header__logo">&lt;/HTML&gt;</h1>
-          <h2 class="header__title">закрывающий тег</h2>
+          <a class="header__logo">&lt;/HTML&gt;</a>
+          <h1 class="header__title">закрывающий тег</h1>
         </div>
 
         <nav class="theme-menu header__theme-menu">
@@ -61,9 +61,9 @@
 
     <main class="content central-position">
       <article class="card">
-        <h3 class="card__title">
+        <h2 class="card__title">
           Фритрек и нулевой спринт: Подготовка к работе
-        </h3>
+        </h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -78,7 +78,7 @@
         <div class="card__description">
           <p>
             Это было самое начало пути. На этом этапе важно было проникнуться
-            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            основами и настроиться на учёбу. И,&nbsp; возможно, подумать, как новые
             знания могут повлиять на ваше будущее.
           </p>
 
@@ -135,7 +135,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">1 спринт: Я — чистый лист</h3>
+        <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -206,7 +206,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">1 спринт: А если не получится?</h3>
+        <h2 class="card__title">1 спринт: А если не получится?</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -277,7 +277,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">2 спринт: Погоня за идеалом</h3>
+        <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -348,7 +348,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">2 спринт: О тех, кто рядом</h3>
+        <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -422,7 +422,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">3 спринт: Обходные стратегии</h3>
+        <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -492,7 +492,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">3 спринт: Когда опускаются руки</h3>
+        <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <div class="card__picture-wrapper">
           <img
             loading="lazy"
@@ -567,7 +567,7 @@
       </article>
 
       <article class="card">
-        <h3 class="card__title">«Сейчас я здесь»</h3>
+        <h2 class="card__title">«Сейчас я здесь»</h2>
         <div class="card__picture-wrapper">
           <img
             class="card__picture card__picture_1-8"
@@ -639,30 +639,10 @@
     </main>
 
     <footer class="footer central-position">
-      <dialog id="footer-dialog" class="footer__dialog">
-        <div class="footer__dialog-container">
-          <div class="footer__dialog-wrapper">
-            <svg class="floppy floppy_floppy-dialog">
-              <use href="./svg/floppy.svg#floppy"></use>
-            </svg>
-
-            <p>Вставьте дискету, чтобы продолжить</p>
-          </div>
-
-          <button
-            type="button"
-            onclick="window['footer-dialog'].close()"
-            class="button button_dialog"
-          >
-            <span class="button__text">ok</span>
-          </button>
-        </div>
-      </dialog>
-
       <button
         type="button"
-        onclick="window['footer-dialog'].showModal()"
-        aria-controls="footer-dialog"
+        onclick="window['dialog'].showModal()"
+        aria-controls="dialog"
         class="button button_footer-button"
       >
         <svg class="floppy">
@@ -672,6 +652,24 @@
         <span class="button__text">Сохранить на память</span>
       </button>
     </footer>
+
+    <dialog id="dialog" class="dialog">
+      <div class="dialog-wrapper">
+        <svg class="floppy floppy_floppy-dialog">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+
+        <p>Вставьте дискету, чтобы продолжить</p>
+      </div>
+
+      
+      <form method="dialog">
+        <button class="button button_dialog">
+          <span class="button__text">ok</span>
+        </button>
+      </form>
+
+    </dialog>
 
     <script src="./scripts/like.js"></script>
   </body>

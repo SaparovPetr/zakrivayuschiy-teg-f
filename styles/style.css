@@ -1,13 +1,31 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, 'Inter-Variable'), Courier, monospace;
-  font-variation-settings: var(--weight-regular, 'wght' 400);
-  background: var(--themes-background, #FFF);
+  font-family: var(--main-font, "Inter-Variable"), Tahoma, sans-serif;
+  font-variation-settings: var(--weight-regular, "wght" 400);
+  background: var(--themes-background, #fff);
+  font-size: 18px;
   color: var(--themes-main-color, #000);
   background-size: cover;
   background-attachment: fixed;
-  background-image: var(--background-page, repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), linear-gradient(#e7e7e7, #1a1a1a));
+  background-image: var(
+    --background-page,
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      #d3d3d3 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3,
+      #d3d3d3 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    linear-gradient(#e7e7e7, #1a1a1a)
+  );
 }
 
 .central-position {
@@ -17,7 +35,7 @@
 }
 
 .header {
-  padding: 102px 0;
+  padding: 101px 0;
 }
 
 .header__wrapper {
@@ -25,9 +43,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--themes-background, #FFF);
+  background: var(--themes-background, #fff);
   border: solid 2px var(--themes-main-color, #000);
-  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
+  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
   justify-items: center;
   max-block-size: 323px;
 }
@@ -35,22 +53,30 @@
 .header__logo-wrapper {
   display: grid;
   justify-items: center;
-  gap: 20px;
+  gap: 19px;
 }
 
 .header__logo {
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
 }
 
+.header__logo:focus {
+  outline: none;
+}
+
+.header__logo:focus-visible {
+  outline: none;
+}
+
 .header__title {
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
-  line-height: 80%;
+  text-transform: uppercase;
 }
 
 .theme-menu__list {
   display: grid;
   gap: 7px;
-  padding: 25px 0;
+  padding: 24px 0;
   font-size: 14px;
   margin-inline-start: 22px;
 }
@@ -61,6 +87,8 @@
   cursor: pointer;
   transition: opacity 0.3s ease;
   text-transform: uppercase;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .theme-menu__button:hover {
@@ -86,7 +114,7 @@
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   inline-size: 0;
   block-size: 3px;
@@ -113,19 +141,20 @@
 }
 
 .card {
-  background: var(--themes-background, #FFF);
+  background: var(--themes-background, #fff);
   border: solid 2px var(--themes-main-color, #000);
   display: grid;
   margin-block-end: 50px;
 }
 
 .card__title {
-  font-variation-settings: var(--weight-title, 'wght' 700);
-  padding: 3px 10px;
-  letter-spacing: -0.5px;
+  font-variation-settings: var(--weight-title, "wght" 700);
+  padding: 6px 10px;
+  font-size: 18px;
 }
 
 .card__picture-wrapper {
+  block-size: calc(100% - 4px);
   position: relative;
   border-block-start: solid 2px var(--themes-main-color, #000);
   border-block-end: solid 2px var(--themes-main-color, #000);
@@ -133,26 +162,28 @@
 
 .card__lable {
   position: absolute;
-  top: 25px;
-  right: 21px;
+  top: 22px;
+  right: 13px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
+  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
   text-shadow:
-    -1px 0 var(--themes-background, #FFF),
-    0 1px var(--themes-background, #FFF),
-    1px 0 var(--themes-background, #FFF),
-    0 -1px var(--themes-background, #FFF);
+    -1px 0 var(--themes-background, #fff),
+    0 1px var(--themes-background, #fff),
+    1px 0 var(--themes-background, #fff),
+    0 -1px var(--themes-background, #fff);
 }
 
 @supports (
-  (text-stroke: 1px var(--themes-background, #FFF)) or (-webkit-text-stroke: 1px #000000)) {
+  (text-stroke: 1px var(--themes-background, #fff)) or
+    (-webkit-text-stroke: 1px #000000)
+) {
   .card__lable {
-    -webkit-text-stroke: 1px var(--themes-background, #FFF);
-    text-stroke: 1px var(--themes-background, #FFF);
+    -webkit-text-stroke: 1px var(--themes-background, #fff);
+    text-stroke: 1px var(--themes-background, #fff);
     text-shadow: none;
   }
 }
@@ -160,16 +191,19 @@
 .card__picture {
   inline-size: 100%;
   block-size: 100%;
-  background-image: radial-gradient(at 30px 30px, var(--themes-main-color, #000), #3f2361);
+  background-image: radial-gradient(
+    at 30px 30px,
+    var(--themes-main-color, #000),
+    #3f2361
+  );
 }
 
 .card__description {
-  padding: 23px 27px;
+  padding: 20px 25px;
   display: flex;
   flex-direction: column;
   gap: 27px;
-  line-height: 130%; /* 21px */
-  letter-spacing: 1px;
+  line-height: 116.667%;
 }
 
 .card__button-zone {
@@ -181,7 +215,7 @@
 }
 
 .button {
-  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
+  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
@@ -192,20 +226,30 @@
   background: var(--themes-background, #fff);
   position: relative;
   cursor: pointer;
-  overflow: hidden;
-  transition: 0.3s;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.button::before {
-  content: '';
+.button::after {
+  content: "";
   position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
   inset: 0;
-  background-color: var(--themes-main-color, #000);
-  animation: remove 0.5s ease-in-out forwards;
+  background: var(--themes-main-color, #000);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
-.button:hover::before {
-  animation: move 0.5s ease-in-out forwards;
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+.button__text {
+  z-index: 1;
+  color: var(--button-text-color, #000);
+  mix-blend-mode: difference;
 }
 
 .button:focus {
@@ -216,15 +260,6 @@
   box-shadow: 2px 2px 0px var(--themes-main-color, #000);
 }
 
-.button__text {
-  position: relative;
-  z-index: 1;
-}
-
-.button:hover {
-  color: var(--button-text-color, #fff);
-}
-
 .card__icon-button {
   border: none;
   background: transparent;
@@ -232,6 +267,8 @@
   block-size: 35px;
   padding: 0;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card__icon-button:focus {
@@ -264,52 +301,47 @@
 }
 
 .floppy {
+  z-index: 1;
+  color: var(--button-text-color, #000);
+  mix-blend-mode: difference;
   inline-size: 28px;
   block-size: 28px;
-  mix-blend-mode: var(--floppy-setings-one, darken);
-  transition: 0.3s;
 }
 
-.button:hover .floppy {
-  mix-blend-mode: var(--floppy-setings-two, lighten);
-}
-
-.footer__dialog {
+.dialog[open] {
   max-inline-size: 341px;
-}
-
-.footer__dialog-container {
   border: solid 2px var(--themes-main-color, #000);
-  background: var(--themes-background, #FFF);
-  padding: 32px 42px;
+  background: var(--themes-background, #fff);
+  padding: 32px 40px;
   color: var(--themes-main-color, #000);
-  font-family: var(--accent-font, 'PressStart2P-Regular'), Tahoma, sans-serif;
+  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
   text-transform: uppercase;
   display: flex;
-  gap: 30px;
   flex-direction: column;
+  gap: 30px;
 }
 
-.footer__dialog-wrapper {
+.dialog-wrapper {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 23px;
 }
 
 .floppy_floppy-dialog {
-  inline-size: 81px;
+  inline-size: 89px;
   block-size: 39px;
 }
 
 .button_dialog {
+  inline-size: 100%;
   block-size: 38px;
   text-transform: uppercase;
 }
 
-.footer__dialog::backdrop {
+.dialog::backdrop {
   opacity: 0.75;
   background: var(--themes-main-color, #000);
 }
@@ -353,31 +385,31 @@
   }
 
   .header__logo-wrapper {
-    gap: 16px;
+    gap: 20px;
   }
 
   .header__title {
     line-height: 100%;
   }
-  
+
   .theme-menu__list {
-    gap: 7px;
-    padding: 17px 0;
-    margin-inline-start: 20px;
-    margin-block-start: 12px;
+    gap: 9px;
+    padding: 15px 0;
+    margin-inline-start: 19px;
+    margin-block-start: 8px;
   }
+
+  .card__picture-wrapper {
+    block-size: calc(100% - 6px);
+  }
+
+   .card__lable {
+    top: 24px;
+    right: 28px;
+   }
 
   .card__description {
-    padding: 28px 26px;
-  }
-
-  .footer__dialog {
-    max-inline-size: 357px;
-    z-index: 5;
-  }
-
-  .footer__dialog-container {
-    padding: 31.5px 32.5px;
+    padding: 17px 26px;
   }
 
   .button_footer-button {
@@ -389,6 +421,15 @@
   .floppy {
     inline-size: 21px;
     block-size: 21px;
+  }
+
+  .dialog[open] {
+    max-inline-size: 358px;
+    padding: 30px 30px;
+  }
+
+  .dialog-wrapper {
+    gap: 20px;
   }
 
   .floppy_floppy-dialog {

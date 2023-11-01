@@ -7,8 +7,6 @@
     --themes-main-color: #000;
     --button-text-color: #FFF;
     --background-page: repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 1px, transparent 1px, transparent 2px), linear-gradient(#e7e7e7, #1a1a1a);
-    --floppy-setings-one: darken;
-    --floppy-setings-two: lighten;
     --heart-contour-color: #000;
     --heart-checked-color: #FF0000;
 }
