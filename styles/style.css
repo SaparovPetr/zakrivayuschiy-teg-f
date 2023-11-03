@@ -45,7 +45,7 @@
   align-items: center;
   background: var(--themes-background, #fff);
   border: solid 2px var(--themes-main-color, #000);
-  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
+  font-family: var(--accent-font, fantasy), Papyrus, fantasy;
   justify-items: center;
   max-block-size: 323px;
 }
@@ -165,7 +165,7 @@
   right: 13px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
+  font-family: var(--accent-font, fantasy), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -190,11 +190,6 @@
 .card__picture {
   inline-size: 100%;
   block-size: 100%;
-  background-image: radial-gradient(
-    at 30px 30px,
-    var(--themes-main-color, #000),
-    #3f2361
-  );
 }
 
 .card__description {
@@ -214,7 +209,7 @@
 }
 
 .button {
-  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
+  font-family: var(--accent-font, fantasy), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
@@ -311,7 +306,7 @@
   background: var(--themes-background, #fff);
   padding: 32px 40px;
   color: var(--themes-main-color, #000);
-  font-family: var(--accent-font, "PressStart2P-Regular"), Papyrus, fantasy;
+  font-family: var(--accent-font, fantasy), Papyrus, fantasy;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
