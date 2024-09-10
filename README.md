@@ -1,11 +1,11 @@
-# zakrivayuschiy-teg-f
-Репозиторий: проект "Закрывающий тег":
+# Проект "Закрывающий тег"
 
-https://github.com/SaparovPetr/zakrivayuschiy-teg-f.git
+Адаптивный лендинг.
+
+## Цель работы:
+- Практика работы с анимацией,
+- Практика работы со стилизацией SVG.
 
 
-
-
-Ссылка на GitHub Pages:
-
+## Публикация:
 https://saparovpetr.github.io/zakrivayuschiy-teg-f/
